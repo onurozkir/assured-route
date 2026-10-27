@@ -7,6 +7,10 @@ name = "assured-route"
 version = "0.1.0"
 description = "Quality-aware invoice inference with deadline-aware routing"
 readme = "README.md"
+license = "MIT"
+authors = [
+  { name = "Onur Özkır", email = "onurozkir@hotmail.com" }
+]
 requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.115,<1",
@@ -22,6 +26,7 @@ dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<2"]
 [tool.hatch.build.targets.sdist]
 include = [
   "src/", "tests/", "demo/", "README.md", "pyproject.toml",
+  "LICENSE", "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "SECURITY.md",
   "uv.lock", ".env.example", ".env.llm.example", ".gitignore", ".gitattributes", ".dockerignore", ".editorconfig", "Dockerfile",
   ".github/workflows/ci.yml",
   "postman/contracts/", "postman/mocks/", "postman/simulations/",

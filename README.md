@@ -30,6 +30,7 @@ that can be extended and evaluated with real workloads.
 - [Docker](#docker)
 - [Project structure](#project-structure)
 - [Scope and next steps](#scope-and-next-steps)
+- [Contributing, Security & License](#contributing-security--license)
 
 ## How routing works
 
@@ -515,3 +516,11 @@ The next steps are:
 
 The goal remains the one explored in the companion article: minimize the total cost
 of successfully resolved tasks while respecting quality and latency constraints.
+
+## Contributing, Security & License
+
+- **Contributing**: Contributions are welcome! Please review [CONTRIBUTING.md](CONTRIBUTING.md) for local development setup, code quality standards, and pull request guidelines.
+- **Code of Conduct**: All participants are expected to follow the standards outlined in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+- **Security Policy**: For vulnerability reporting and security practices regarding LLM credentials and untrusted OCR payloads, see [SECURITY.md](SECURITY.md).
+- **License**: Assured Route is released under the [MIT License](LICENSE).
+
