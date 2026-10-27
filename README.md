@@ -1,4 +1,4 @@
-[Read the companion blog post](https://onurozkir.com/en/ai-native-swe/is-cheap-model-suffivient/)
+[Read the companion blog post](https://onurozkir.com/en/ai-native-swe/is-cheap-model-sufficient/)
 
 # Assured Route
 
