@@ -1,0 +1,325 @@
+{
+  "extracted_data": {
+    "document_type": "invoice",
+    "invoice_number": "INV-2026-001",
+    "invoice_date": "2026-10-20",
+    "due_date": "2026-11-20",
+    "currency": "TRY",
+    "invoice_total": "1200.00",
+    "vat_total": "200.00",
+    "seller_name": "Acme Ltd",
+    "seller_tax_id": "1234567890",
+    "buyer_name": "Buyer Ltd"
+  },
+  "decision": "ACCEPT",
+  "selected_path": "expensive",
+  "validation_report": {
+    "checks": [
+      {
+        "validator": "schema",
+        "code": "schema_valid",
+        "passed": true,
+        "field": null,
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "invoice_number",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "invoice_date",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "due_date",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "currency",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "invoice_total",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "vat_total",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "seller_name",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "seller_tax_id",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "grounding",
+        "code": "source_exact",
+        "passed": true,
+        "field": "buyer_name",
+        "severity": "info",
+        "recoverable": true
+      },
+      {
+        "validator": "business_rules",
+        "code": "total_covers_vat",
+        "passed": true,
+        "field": "invoice_total",
+        "severity": "fatal",
+        "recoverable": false
+      },
+      {
+        "validator": "business_rules",
+        "code": "due_after_invoice",
+        "passed": true,
+        "field": "due_date",
+        "severity": "fatal",
+        "recoverable": false
+      },
+      {
+        "validator": "business_rules",
+        "code": "tax_id_length",
+        "passed": true,
+        "field": "seller_tax_id",
+        "severity": "error",
+        "recoverable": true
+      }
+    ]
+  },
+  "estimated_risk_score": 0.05,
+  "field_risk_scores": {
+    "invoice_number": 0.05,
+    "invoice_date": 0.05,
+    "due_date": 0.05,
+    "currency": 0.05,
+    "invoice_total": 0.05,
+    "vat_total": 0.05,
+    "seller_name": 0.05,
+    "seller_tax_id": 0.05,
+    "buyer_name": 0.05
+  },
+  "risk_basis": "heuristic_not_probability",
+  "estimated_cost": "0.015",
+  "cost_currency": "USD",
+  "latency_breakdown": {
+    "total_ms": 43.552,
+    "budget_ms": 1500,
+    "stages_ms": {
+      "pre_router": 0.011,
+      "expensive": 43.202,
+      "validation": 0.244
+    },
+    "deadline_exceeded": false
+  },
+  "audit": {
+    "request_id": "033c814f-1b80-4b79-8e02-79cd43c8cde7",
+    "document_sha256": "ca9295926e6d829898a8796db0322f08587eac8acb5f9b162e8d712c2822bb18",
+    "policy_sha256": "bd94da2741b4c0025ee4f2f8e11bfb64be53b9edec08fc83679f38b9e1ca75e4",
+    "policy": {
+      "version": "heuristic-v1",
+      "accept_risk_max": 0.25,
+      "force_expensive": false,
+      "enable_verifier": true,
+      "require_verifier": false,
+      "low_ocr_threshold": 0.8,
+      "max_cheap_pages": 3,
+      "max_cheap_chars": 12000,
+      "fuzzy_name_threshold": 0.92,
+      "response_reserve_ms": 20,
+      "cheap_expected_ms": 80,
+      "expensive_expected_ms": 250,
+      "verifier_expected_ms": 40,
+      "provider_timeout_ms": 1000,
+      "cheap_timeout_ms": null
+    },
+    "started_at": "2026-10-25T23:03:02.584442Z",
+    "versions": {
+      "service": "0.1.0",
+      "router": "heuristic-pre-v1",
+      "validators": "invoice-rules-v1",
+      "risk": "heuristic-max-v1"
+    },
+    "events": [
+      {
+        "stage": "pre_router",
+        "reason": "metadata_high_risk",
+        "elapsed_ms": 0.031,
+        "decision": null
+      },
+      {
+        "stage": "quality_gate",
+        "reason": "validators_evaluated",
+        "elapsed_ms": 43.526,
+        "decision": "ACCEPT"
+      },
+      {
+        "stage": "final",
+        "reason": "quality_gate_accept",
+        "elapsed_ms": 43.546,
+        "decision": "ACCEPT"
+      }
+    ],
+    "calls": [
+      {
+        "role": "expensive",
+        "model_version": "mock-expensive-v1",
+        "prompt_version": "labeled-invoice-extended-v1",
+        "status": "ok",
+        "latency_ms": 43.202,
+        "estimated_cost_usd": "0.015",
+        "error_code": null,
+        "http_status": null
+      }
+    ],
+    "validation_attempts": [
+      {
+        "role": "expensive",
+        "report": {
+          "checks": [
+            {
+              "validator": "schema",
+              "code": "schema_valid",
+              "passed": true,
+              "field": null,
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "invoice_number",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "invoice_date",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "due_date",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "currency",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "invoice_total",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "vat_total",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "seller_name",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "seller_tax_id",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "grounding",
+              "code": "source_exact",
+              "passed": true,
+              "field": "buyer_name",
+              "severity": "info",
+              "recoverable": true
+            },
+            {
+              "validator": "business_rules",
+              "code": "total_covers_vat",
+              "passed": true,
+              "field": "invoice_total",
+              "severity": "fatal",
+              "recoverable": false
+            },
+            {
+              "validator": "business_rules",
+              "code": "due_after_invoice",
+              "passed": true,
+              "field": "due_date",
+              "severity": "fatal",
+              "recoverable": false
+            },
+            {
+              "validator": "business_rules",
+              "code": "tax_id_length",
+              "passed": true,
+              "field": "seller_tax_id",
+              "severity": "error",
+              "recoverable": true
+            }
+          ]
+        },
+        "decision": "ACCEPT",
+        "risk_score": 0.05
+      }
+    ]
+  }
+}

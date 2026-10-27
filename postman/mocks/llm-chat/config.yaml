@@ -1,0 +1,11 @@
+version: 1
+id: 18bfb856-f3d2-400a-9199-f426de8fb370
+name: llm-chat
+slug: llm-chat
+protocol: http
+port: 4500
+interceptRequests: true
+scenarios:
+  - name: default
+    path: ./default.js
+    default: true

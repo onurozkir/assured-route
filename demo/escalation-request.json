@@ -1,0 +1,7 @@
+{
+  "raw_ocr_text": "Fatura No: INV-2026-001\nFatura Tarihi: 2026-10-20\nVade Tarihi: 2026-11-20\nPara Birimi: TRY\nGenel Toplam: 1.200,00\nKDV Toplam: 200,00\nSatıcı: Acme Ltd\nVergi No: 1234567890\nAlıcı: Buyer Ltd",
+  "metadata": {
+    "known_template": true
+  },
+  "latency_budget_ms": 1500
+}

@@ -1,0 +1,15 @@
+{
+  "monthly_requests": 4000000,
+  "routes": [
+    {"name": "direct_expensive", "share": "0.20", "expensive_calls": 1},
+    {"name": "cheap_rules", "share": "0.55", "cheap_calls": 1},
+    {"name": "cheap_verified", "share": "0.15", "cheap_calls": 1, "verifier_calls": 1},
+    {"name": "verified_escalation", "share": "0.05", "cheap_calls": 1, "verifier_calls": 1, "expensive_calls": 1},
+    {"name": "early_escalation", "share": "0.05", "cheap_calls": 1, "expensive_calls": 1}
+  ],
+  "cheap_unit_cost_usd": "0.0015",
+  "expensive_unit_cost_usd": "0.015",
+  "verifier_unit_cost_usd": "0.0003",
+  "shadow_expensive_calls": 60000,
+  "infrastructure_cost_usd": "60"
+}

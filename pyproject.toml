@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "assured-route"
+version = "0.1.0"
+description = "Quality-aware invoice inference with deadline-aware routing"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "uvicorn>=0.34,<1",
+  "httpx>=0.28,<1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<2"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/", "tests/", "demo/", "README.md", "pyproject.toml",
+  "uv.lock", ".env.example", ".env.llm.example", ".gitignore", ".gitattributes", ".dockerignore", ".editorconfig", "Dockerfile",
+  ".github/workflows/ci.yml",
+  "postman/contracts/", "postman/mocks/", "postman/simulations/",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".uv-cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["src"]

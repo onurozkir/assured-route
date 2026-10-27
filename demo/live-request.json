@@ -1,0 +1,12 @@
+{
+  "raw_ocr_text": "document_type: invoice\ninvoice_number: INV-2026-001\ninvoice_date: 2026-10-20\ndue_date: 2026-11-20\ncurrency: TRY\ninvoice_total: 1200.00\nvat_total: 200.00\nseller_name: Acme Ltd\nseller_tax_id: 1234567890\nbuyer_name: Buyer Ltd",
+  "metadata": {
+    "page_count": 1,
+    "ocr_quality": 0.98,
+    "known_template": true,
+    "high_risk": false,
+    "semantic_ambiguity": false
+  },
+  "latency_budget_ms": 20000,
+  "policy": null
+}
